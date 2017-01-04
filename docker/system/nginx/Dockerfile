@@ -1,8 +1,10 @@
-FROM alpine:edge
+FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN apk add --update --no-cache nginx && \
-    mkdir -p /run/nginx
+RUN yes | pacman -S nginx && \
+    yes | pacman -Scc
+
+COPY nginx.conf /etc/nginx
 
 EXPOSE 80
 EXPOSE 443

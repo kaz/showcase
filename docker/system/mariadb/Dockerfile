@@ -1,11 +1,11 @@
-FROM alpine:edge
+FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN apk add --update --no-cache mariadb mariadb-client && \
-    mkdir -p /run/mysqld && \
-    mysql_install_db --user=root
+RUN yes | pacman -S mariadb && \
+    yes | pacman -Scc && \
+    mysql_install_db --user=root --basedir=/usr --datadir=/var/lib/mysql
 
 EXPOSE 3306
 
-ENTRYPOINT ["mysqld"]
+ENTRYPOINT ["mysqld_safe"]
 CMD ["--user=root"]
