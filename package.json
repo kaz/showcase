@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "author": "Kazuki Sawada",
   "scripts": {
-  	"start": "node --harmony index.js"
+    "start": "node --harmony index.js"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
     "ejs": "^2.5.5",
     "js-yaml": "^3.7.0",
-    "koa": "^2.0.0"
+    "tmp": "0.0.31"
   }
 }

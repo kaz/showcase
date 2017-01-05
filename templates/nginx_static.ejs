@@ -3,7 +3,7 @@ server {
 	listen [::1]:80;
 	server_name <%= servers.join(" ") %>;
 	
-	root <%= docroot %>;
+	root <%= docRoot %>;
 	index index.php index.html;
 	
 	location /traplus.yml {
@@ -13,7 +13,7 @@ server {
 	location ~ \.php(?:$|/) {
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		include fastcgi_params;
-		fastcgi_param PHP_ADMIN_VALUE "open_basedir=<%= docroot %>";
+		fastcgi_param PHP_ADMIN_VALUE "open_basedir=<%= docRoot %>";
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 		fastcgi_param PATH_INFO $fastcgi_path_info;
 		fastcgi_pass phpfpm:9000;
