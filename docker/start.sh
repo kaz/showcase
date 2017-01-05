@@ -1,13 +1,13 @@
-# Network
+#!/bin/bash
+
+# Clean
+docker rm -f mariadb mongodb phpfpm nginx
+docker network rm traplus
+
+# Setup Network
 docker network create traplus
 
-# Build system
-docker build -t system/mariadb system/mariadb
-docker build -t system/mongodb system/mongodb
-docker build -t system/phpfpm system/phpfpm
-docker build -t system/nginx system/nginx
-
-# Run system
+# Run systems
 
 docker run -dit \
 --name mariadb \
@@ -24,13 +24,6 @@ docker run -dit \
 system/mongodb
 
 docker run -dit \
---name phpfpm \
---volume `pwd`/../data/repositories:/srv \
---network traplus \
---restart always \
-system/phpfpm
-
-docker run -dit \
 --name nginx \
 --volume `pwd`/../data/nginx:/etc/nginx/conf.d \
 --volume `pwd`/../data/repositories:/srv \
@@ -38,8 +31,3 @@ docker run -dit \
 --network traplus \
 --restart always \
 system/nginx
-
-# Build runtime
-docker build -t runtime/node runtime/node
-
-
