@@ -1,7 +1,8 @@
 FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN yes | pacman -S php-fpm php-sqlite && \
+RUN yes | pacman -S php php-sqlite && \
+    yes | pacman -Sdd php-fpm && \
     yes | pacman -Scc
 
 COPY custom.ini /etc/php/conf.d
