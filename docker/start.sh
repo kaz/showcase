@@ -1,11 +1,21 @@
 #!/bin/bash
 
-# Clean
+# Clean / Setup
 docker rm -f mariadb mongodb nginx
 docker network rm traplus
-
-# Setup Network
 docker network create traplus
+
+# Setup data
+
+docker run --rm -it \
+--volume `pwd`/../data/mariadb:/var/lib/mysql \
+--entrypoint bash \
+system/mariadb
+
+docker run --rm -it \
+--volume `pwd`/../data/mongodb:/var/lib/mongodb \
+--entrypoint bash \
+system/mongodb
 
 # Run systems
 

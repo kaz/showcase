@@ -1,0 +1,11 @@
+mongod --dbpath /var/lib/mongodb &
+mongo admin
+
+db.createUser({
+	user: "root",
+	pwd: "",
+	roles: [{
+		db: "admin",
+		role: "root"
+	}]
+});

@@ -1,9 +1,8 @@
 FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN yes | pacman -S mariadb && \
-    yes | pacman -Scc && \
-    mysql_install_db --user=root --basedir=/usr --datadir=/var/lib/mysql
+RUN yes | pacman -Syu mariadb && \
+    yes | pacman -Scc
 
 EXPOSE 3306
 

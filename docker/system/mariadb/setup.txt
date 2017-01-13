@@ -1,0 +1,8 @@
+mysql_install_db --user=root --basedir=/usr --datadir=/var/lib/mysql
+mysqld_safe --user=root &
+mysql_secure_installation
+
+mysql -u root -p
+
+CREATE USER 'root'@'172.%' IDENTIFIED BY '';
+GRANT ALL ON *.* TO 'root'@'172.%';
