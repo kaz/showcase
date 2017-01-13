@@ -4,5 +4,5 @@ mysql_secure_installation
 
 mysql -u root -p
 
-CREATE USER 'root'@'172.%' IDENTIFIED BY '';
-GRANT ALL ON *.* TO 'root'@'172.%';
+CREATE USER 'root'@'172.%.0.1' IDENTIFIED BY '';
+GRANT ALL ON *.* TO 'root'@'172.%.0.1' WITH GRANT OPTION;

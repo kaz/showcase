@@ -2,8 +2,8 @@
 
 # Clean / Setup
 docker rm -f mariadb mongodb nginx
-docker network rm traplus
-docker network create traplus
+docker network rm tra.plus
+docker network create tra.plus
 
 # Setup data
 
@@ -24,7 +24,7 @@ docker run -dit \
 --hostname mariadb \
 --volume `pwd`/../data/mariadb:/var/lib/mysql \
 --publish 3306:3306 \
---network traplus \
+--network tra.plus \
 --restart always \
 system/mariadb
 
@@ -33,7 +33,7 @@ docker run -dit \
 --hostname mongodb \
 --volume `pwd`/../data/mongodb:/var/lib/mongodb \
 --publish 27017:27017 \
---network traplus \
+--network tra.plus \
 --restart always \
 system/mongodb
 
@@ -42,8 +42,8 @@ docker run -dit \
 --hostname nginx \
 --volume `pwd`/../data/nginx:/etc/nginx/conf.d \
 --volume `pwd`/../data/repositories:/srv \
---publish 8080:80 \
+--publish 80:80 \
 --publish 443:443 \
---network traplus \
+--network tra.plus \
 --restart always \
 system/nginx
