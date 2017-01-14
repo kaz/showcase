@@ -2,8 +2,8 @@
 
 # Clean / Setup
 docker rm -f mariadb mongodb nginx
-docker network rm tra.plus
-docker network create tra.plus
+docker network rm trap.show
+docker network create trap.show
 
 # Setup data
 
@@ -24,7 +24,7 @@ docker run -dit \
 --hostname mariadb \
 --volume `pwd`/../data/mariadb:/var/lib/mysql \
 --publish 3306:3306 \
---network tra.plus \
+--network trap.show \
 --restart always \
 system/mariadb
 
@@ -33,7 +33,7 @@ docker run -dit \
 --hostname mongodb \
 --volume `pwd`/../data/mongodb:/var/lib/mongodb \
 --publish 27017:27017 \
---network tra.plus \
+--network trap.show \
 --restart always \
 system/mongodb
 
@@ -44,6 +44,6 @@ docker run -dit \
 --volume `pwd`/../data/repositories:/srv \
 --publish 80:80 \
 --publish 443:443 \
---network tra.plus \
+--network trap.show \
 --restart always \
 system/nginx

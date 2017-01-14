@@ -1,7 +1,12 @@
 {
-  "name": "traplus",
-  "version": "1.0.0",
-  "author": "Kazuki Sawada",
+  "name": "showcase",
+  "domain": "trap.show",
+  "version": "0.0.1",
+  "author": {
+    "name": "Kazuki Sawada",
+    "email": "kazuki@6715.jp",
+    "url": "http://narusejun.com"
+  },
   "scripts": {
     "start": "node --harmony index.js"
   },
