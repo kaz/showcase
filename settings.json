@@ -1,6 +1,13 @@
 {
-  "name": "showcase",
-  "domain": "trap.show",
-  "git": "http://localhost:3000",
-  "token": "7ebcff2053824a0161acd993cb76b9596e8bc9e8",
+	"name": "showcase",
+	"domain": "trap.show",
+	"git": "http://localhost:3000",
+	"api": {
+		"protocol": "http:",
+		"hostname": "localhost",
+		"port": 3000,
+		"headers": {
+			"Authorization": "token 7ebcff2053824a0161acd993cb76b9596e8bc9e8"
+		}
+	}
 }
