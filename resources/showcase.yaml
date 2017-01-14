@@ -1,0 +1,28 @@
+# deploy mode <"static", "runtime"> (required)
+type: runtime
+
+# additional server name <array or string> (default: NULL)
+cname: localhost
+
+# script executed on startup (default: NULL)
+on_created: |
+  pwd > poyoyo
+
+# use external databases (default: false)
+use_mongodb: true
+use_mariadb: true
+
+# relative path to document root (default: ./)
+document_root: ./
+
+# [runtime] docker image to use (default: "kazsw/arch")
+image: runtime/node
+
+# [runtime] docker entrypoint command (default: NULL)
+entrypoint: node app.js
+
+# [runtime] which port to proxy via http(80) (default: NULL)
+http_proxy: 1337
+
+# [runtime] which port to expose (default: NULL)
+expose: 1337
