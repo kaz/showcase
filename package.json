@@ -15,7 +15,6 @@
     "js-yaml": "^3.7.0",
     "mongodb": "^2.2.19",
     "mysql": "^2.12.0",
-    "randomstring": "^1.1.5",
-    "tmp": "0.0.31"
+    "randomstring": "^1.1.5"
   }
 }

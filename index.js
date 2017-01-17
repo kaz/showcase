@@ -1,8 +1,8 @@
 "use strict";
 
-const Logger = require("./lib/logger");
-const Deployer = require("./lib/deployer");
-const Connector = require("./lib/connector");
+const Logger = require("./lib/helper/logger");
+const Deployer = require("./lib/helper/deployer");
+const Connector = require("./lib/helper/connector");
 const AppModel = require("./lib/model/app");
 
 (async _ => {
