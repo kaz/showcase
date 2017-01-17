@@ -1,16 +1,19 @@
 "use strict";
 
 const Logger = require("./lib/logger");
-const deployer = require("./lib/deployer");
-const connector = require("./lib/connector");
+const Deployer = require("./lib/deployer");
+const Connector = require("./lib/connector");
+const AppModel = require("./lib/model/app");
 
 (async _ => {
-	const repo = "root/test";
-	const conn = connector.new();
+	const app = new AppModel();
+	await app.resolve("root/test", "master");
+	
 	if(1){
-		await deployer.run(conn, repo);
+		await Deployer.run(app);
 	}else{
-		await deployer.remove(conn, repo);
+		await Deployer.remove(app);
 	}
-	conn.close();
+	
+	Connector.close();
 })().catch(error => console.trace(error));

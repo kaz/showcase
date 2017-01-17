@@ -5,9 +5,7 @@ type: runtime
 cname: localhost
 
 # script executed on startup (default: NULL)
-on_created: |
-  pwd > poyoyo
-
+on_created: null
 # use external databases (default: false)
 use_mongodb: true
 use_mariadb: true
@@ -26,3 +24,12 @@ http_proxy: 1337
 
 # [runtime] which port to expose (default: NULL)
 expose: 1337
+
+# custom deploy setting (default: see documents)
+branch:
+  production:
+    on_created: |
+      echo "this is production env" > log.txt
+  development:
+    on_created: |
+      echo "this is development env" > log.txt
