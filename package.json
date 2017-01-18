@@ -7,7 +7,7 @@
     "url": "http://narusejun.com"
   },
   "scripts": {
-    "start": "node --harmony index.js"
+    "start": "node --harmony lib/web.js"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
