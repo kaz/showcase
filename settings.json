@@ -8,7 +8,7 @@
 		"hostname": "localhost",
 		"port": 3000,
 		"headers": {
-			"Authorization": "token 7ebcff2053824a0161acd993cb76b9596e8bc9e8"
+			"Authorization": "token af2776da67addb894f3980e8fe612b77703fe2ae"
 		}
 	}
 }
