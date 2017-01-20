@@ -2,13 +2,12 @@
 	"name": "showcase",
 	"domain": "trap.show",
 	"listen": 8080,
-	"git": "http://localhost:3000",
+	"git": "https://git-beta.trapti.tech",
 	"api": {
-		"protocol": "http:",
-		"hostname": "localhost",
-		"port": 3000,
+		"protocol": "https:",
+		"hostname": "git-beta.trapti.tech",
 		"headers": {
-			"Authorization": "token af2776da67addb894f3980e8fe612b77703fe2ae"
+			"Authorization": "token "
 		}
 	}
 }
