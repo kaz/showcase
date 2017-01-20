@@ -2,12 +2,13 @@
 	"name": "showcase",
 	"domain": "trap.show",
 	"listen": 8080,
-	"git": "https://git-beta.trapti.tech",
+	"git": "git@git-beta.trapti.tech:",
 	"api": {
 		"protocol": "https:",
 		"hostname": "git-beta.trapti.tech",
 		"headers": {
 			"Authorization": "token "
 		}
-	}
+	},
+	"keyPath": "/home/showcase/.ssh/authorized_keys"
 }
