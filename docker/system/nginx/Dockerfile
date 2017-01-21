@@ -1,7 +1,7 @@
 FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN yes | pacman -Syu nginx && \
+RUN yes | pacman -Syu nginx-mainline && \
     yes | pacman -Scc
 
 COPY nginx.conf /etc/nginx

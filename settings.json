@@ -2,10 +2,10 @@
 	"name": "showcase",
 	"domain": "trap.show",
 	"listen": 8080,
-	"git": "git@git-beta.trapti.tech:",
+	"git": "git@git.trapti.tech:",
 	"api": {
 		"protocol": "https:",
-		"hostname": "git-beta.trapti.tech",
+		"hostname": "git.trapti.tech",
 		"headers": {
 			"Authorization": "token "
 		}

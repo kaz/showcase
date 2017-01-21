@@ -8,12 +8,12 @@ docker network create trap.show
 # Setup data
 
 docker run --rm -it \
---volume `pwd`/../data/mariadb:/var/lib/mysql \
+--volume /srv/data/mariadb:/var/lib/mysql \
 --entrypoint bash \
 system/mariadb
 
 docker run --rm -it \
---volume `pwd`/../data/mongodb:/var/lib/mongodb \
+--volume /srv/data/mongodb:/var/lib/mongodb \
 --entrypoint bash \
 system/mongodb
 
