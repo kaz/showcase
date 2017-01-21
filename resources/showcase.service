@@ -1,0 +1,12 @@
+[Unit]
+Description=traP Showcase
+After=syslog.target network.target docker.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv
+ExecStart=/usr/bin/env node --harmony lib/web.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
