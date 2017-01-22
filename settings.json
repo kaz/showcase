@@ -2,7 +2,7 @@
 	"name": "showcase",
 	"domain": "trap.show",
 	"listen": 8080,
-	"git": "git@git.trapti.tech:",
+	"git": "https://git.trapti.tech/",
 	"api": {
 		"protocol": "https:",
 		"hostname": "git.trapti.tech",

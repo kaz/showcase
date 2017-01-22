@@ -1,21 +1,21 @@
 # deploy mode <"static", "runtime"> (required)
-type: static
+type: "static"
 
 # additional server name <array or string> (default: [])
 cname: []
 
 # script executed on startup (default: null)
-on_created: null
+startup: null
 
 # use external databases (default: false)
 use_mongodb: false
 use_mariadb: false
 
 # relative path to document root (default: .)
-document_root: .
+work_dir: "."
 
 # [runtime] docker image to use (default: "kazsw/arch")
-image: kazsw/arch
+image: "kazsw/arch"
 
 # [runtime] docker entrypoint command (default: "")
 entrypoint: ""
@@ -26,6 +26,9 @@ http_proxy: null
 # [runtime] which port to expose (default: null)
 expose: null
 
-# custom deploy setting (default: see documents)
+# [runtime] enviromnent variables passed to docker container (default: {})
+envs: {}
+
+# custom deploy setting <see document!> (default: {master: null})
 branch:
-  master:
+  master: null
