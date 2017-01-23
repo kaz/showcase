@@ -7,8 +7,3 @@ RUN yes | pacman -Syu php php-sqlite && \
 
 COPY custom.ini /etc/php/conf.d
 COPY www.conf /etc/php/php-fpm.d
-
-EXPOSE 9000
-
-ENTRYPOINT ["php-fpm"]
-CMD ["--nodaemonize"]
