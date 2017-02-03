@@ -1,7 +1,7 @@
 FROM kazsw/arch
 MAINTAINER Kazuki Sawada
 
-RUN yes | pacman -Syu php php-sqlite && \
+RUN yes | pacman -Syu php php-sqlite git composer && \
     yes | pacman -Sdd php-fpm && \
     yes | pacman -Scc
 
