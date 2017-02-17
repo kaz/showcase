@@ -17,7 +17,9 @@ const deploy = (repo, ref) => new Promise(resolve => {
 
 (async _ => {
 	for(const app of await AppModel.apps()){
-		await deploy(app.repo, app.branch);
+		if(app.config.type == "runtime"){
+			await deploy(app.repo, app.branch);
+		}
 	}
 	Connector.close();
 })();
