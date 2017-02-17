@@ -10,7 +10,7 @@ const deploy = (repo, ref) => new Promise(resolve => {
 	console.log(`Deploying ${repo} (${ref}) ...`);
 	
 	const modulePath = path.resolve(path.join(__dirname, "../lib/worker/deploy"));
-	const child = child_process.fork(modulePath, [ctx.query.repo, ctx.query.ref], {cwd: process.cwd()});
+	const child = child_process.fork(modulePath, [repo, ref], {cwd: process.cwd()});
 	
 	child.on("exit", resolve);
 });
