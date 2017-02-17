@@ -14,8 +14,8 @@ use_mariadb: false
 # relative path to document root (default: .)
 work_dir: "."
 
-# [runtime] docker image to use (default: "kazsw/arch")
-image: "kazsw/arch"
+# [runtime] docker image to use (default: "runtime")
+image: "runtime"
 
 # [runtime] docker entrypoint command (default: "")
 entrypoint: ""
