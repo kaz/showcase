@@ -1,8 +1,7 @@
-FROM alpine:edge
+FROM base
 
-RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
-    apk add --update --no-cache mongodb && \
-    mkdir -p /var/lib/mongodb
+RUN pacman -S --noconfirm mongodb && \
+    pacman -Scc --noconfirm
 
 EXPOSE 27017
 

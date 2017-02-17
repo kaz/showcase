@@ -1,4 +1,4 @@
-FROM runtime
+FROM base
 
-RUN yes | pacman -Syu nodejs npm gulp python2 && \
-    yes | pacman -Scc
+RUN pacman -S --noconfirm nodejs npm gulp python2 && \
+    pacman -Scc --noconfirm

@@ -1,6 +1,6 @@
-FROM runtime
+FROM base
 
-RUN yes | pacman -Syu go godep && \
-    yes | pacman -Scc
+RUN pacman -S --noconfirm go godep && \
+    pacman -Scc --noconfirm
 
 ENV GOPATH /root/go

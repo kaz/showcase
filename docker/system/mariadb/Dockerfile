@@ -1,7 +1,7 @@
-FROM alpine:edge
+FROM base
 
-RUN apk add --update --no-cache mariadb mariadb-client && \
-    mkdir -p /run/mysqld
+RUN pacman -S --noconfirm mariadb && \
+    pacman -Scc --noconfirm
 
 EXPOSE 3306
 

@@ -1,4 +1,4 @@
-FROM runtime
+FROM base
 
-RUN yes | pacman -Syu rust cargo gcc && \
-    yes | pacman -Scc
+RUN pacman -S --noconfirm rust cargo gcc && \
+    pacman -Scc --noconfirm
