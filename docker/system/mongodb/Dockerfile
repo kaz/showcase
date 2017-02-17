@@ -1,5 +1,4 @@
 FROM kazsw/arch
-MAINTAINER Kazuki Sawada
 
 RUN yes | pacman -Syu mongodb && \
     yes | pacman -Scc

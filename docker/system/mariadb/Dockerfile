@@ -1,5 +1,4 @@
 FROM kazsw/arch
-MAINTAINER Kazuki Sawada
 
 RUN yes | pacman -Syu mariadb && \
     yes | pacman -Scc

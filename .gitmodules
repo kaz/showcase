@@ -1,0 +1,3 @@
+[submodule "docker/runtime/base/token-verifier"]
+	path = docker/runtime/base/token-verifier
+	url = https://github.com/kaz/showcase-admin.git

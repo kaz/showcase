@@ -1,5 +1,4 @@
-FROM kazsw/arch
-MAINTAINER Kazuki Sawada
+FROM runtime
 
-RUN yes | pacman -Syu npm gulp python2 git && \
+RUN yes | pacman -Syu nodejs npm gulp python2 && \
     yes | pacman -Scc
