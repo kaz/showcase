@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i);
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url(https://cdn.rawgit.com/olimsaidov/pixeden-stroke-7-icon/master/pe-icon-7-stroke/dist/pe-icon-7-stroke.css);
+
+.reveal {
+  font-family: "Noto Sans Japanese" !important;
+}
+.reveal * {
+  text-transform: none !important;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  font-family: "Raleway" !important;
+}
+.brand i {
+  position: relative;
+  top: .75vh;
+}
+h1.brand,
+h2.brand {
+  font-style: italic;
+}
+#footer {
+  position: relative;
+  height: 0;
+  width: 100%;
+  background-color: #285050;
+  overflow: hidden;
+}
+#footer h1 {
+  position: absolute;
+  left: 2vw;
+  top: -8.75vh;
+  color: #FFF;
+  font-size: 11vh;
+  font-weight: 100;
+  font-family: "Noto Sans Japanese";
+}
+#footer img {
+  position: absolute;
+  right: -10vw;
+  top: -10vh;
+  height: 50vh;
+}
+.progress {
+  display: none !important;
+}

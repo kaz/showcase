@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Showcase</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/narusejun.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<section data-title="">
+	<h1 class="brand"><i class="pe-7s-box2"></i> SHOWCASE</h1>
+	<h3 class="brand">Integrated Application Platform</h3>
+</section>
+
+<section>
+	<section data-markdown data-title="自己紹介">
+		##### Team: narusejun.com
+		## 澤田 一樹
+		工学部 情報工学科 2年
+	</section>
+	<section data-markdown data-title="自己紹介">
+		<script type="text/template">
+			東京工業大学デジタル創作同好会
+		
+			![](https://object-storage.tyo1.conoha.io/v1/nc_a389300626f9429c8b4e91e76400ea1e/crowi/attachment/5825ad568724a961054477cb/a3d261bfd0723aba8a8d82cfa66d73a6.png) <!-- .element: style="box-shadow: none; border: none; height: 25vh" -->
+			
+			のシス管です。
+		</script>
+	</section>
+	<section data-markdown data-title="自己紹介">
+		GitHub: @kaz
+		
+		Twitter: @n4ru5e
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="本日のテーマ">
+		## 本日提案するモノ
+	</section>
+	<section data-markdown data-title="本日のテーマ">
+		### CIとPaaSの複雑さを
+		### 取り払って統合した全く新しい
+		### アプリケーション
+		### プラットフォーム
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="クラウドってどうなの">
+		作ったサービス・アプリを公開するには？
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		### 昔は……
+		
+		- サーバーを借りて……
+		- アプリ実行環境を用意して……
+		
+		とにかくサーバーに関する知識が必須
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		### 今は……
+		
+		- "クラウド"が一世を風靡
+		
+		サーバーに関する知識が不要になったか？
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		<script type="text/template">
+			## IaaS
+			
+			(Infrastructure as a Service)
+			
+			- AmazonEC2とかGoogleComputeEngine
+			- 旧来のレンタルサーバーとそんなに変わらない
+				- スケールがしやすくなったりはした
+				
+			![](img/ec2.png) <!-- .element style="height:25vh" -->
+			![](img/gce.jpg) <!-- .element style="height:25vh" -->
+		</script>
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		結局サーバーの知識が必要やんけ！
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		<script type="text/template">
+			### PaaS
+			
+			(Platform as a Service)
+			
+			- HerokuとかGoogleAppEngine
+			- サーバーを意識しなくてもアプリを公開できる
+			
+			![](img/heroku.jpg) <!-- .element style="height:25vh" -->
+			![](img/gae.jpg) <!-- .element style="height:25vh" -->
+		</script>
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		<script type="text/template">
+			#### サーバーを意識しなくてもアプリを公開できる
+			
+			### けれど、 <!-- .element: class="fragment" data-fragment-index="1" -->
+			
+			Herokuってどうやってデプロイするんだっけ？ <!-- .element: class="fragment" data-fragment-index="2" -->
+			
+			AppEngineは？ <!-- .element: class="fragment" data-fragment-index="3" -->
+		</script>
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		PaaSごとに違う**お作法**を覚えなければならない！
+		
+		しかもけっこう複雑……
+	</section>
+	<section data-markdown data-title="クラウドってどうなの">
+		誰でもカンタンにデプロイできたらいいな
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="デプロイって面倒！">
+		ところで、アプリケーションを更新するたびに再度デプロイするのって面倒ですよね。
+	</section>
+	<section data-markdown data-title="デプロイって面倒！">
+		### traPの実情
+		
+		- みんな活発に開発しています
+		- ビルドしたアプリやWebアプリを更新してくれない！
+			- 面倒だもんね
+		- アレ、最新版のバイナリはどこ……？
+	</section>
+	<section data-markdown data-title="デプロイって面倒！">
+		<script type="text/template">
+			## CI
+			
+			(Continuous Integration)
+			
+			- プログラマーのアプリケーション作成時の品質改善や納期の短縮のための習慣、およびそのサポートをするソフトウェアのこと
+			- JenkinsとかCircleCIが有名
+		
+			![](img/jenkins.png) <!-- .element style="height:25vh" -->
+			![](img/circle.png) <!-- .element style="height:25vh" -->
+		</script>
+	</section>
+	<section data-markdown data-title="デプロイって面倒！">
+		<script type="text/template">
+			#### 勝手にビルドしてデプロイしてくれる
+			
+			### けれど、 <!-- .element: class="fragment" data-fragment-index="1" -->
+			
+			Jenkinsの設定ファイルってどう書くんだっけ？ <!-- .element: class="fragment" data-fragment-index="2" -->
+			
+			CircleCIは？ <!-- .element: class="fragment" data-fragment-index="3" -->
+		</script>
+	</section>
+	<section data-markdown data-title="デプロイって面倒！">
+		CIごとに違う**お作法**を覚えなければならない！
+		
+		しかもけっこう複雑……
+	</section>
+	<section data-markdown data-title="デプロイって面倒！">
+		誰でもカンタンに自動化できたらいいな
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="連携するのも大変">
+		自動でアプリをビルドして公開するなら、
+		PaaSとCIを連携しなくてはならない。
+	</section>
+	<section data-markdown data-title="連携するのも大変">
+		- PaaSやCIは他にもいろいろなものがある
+		- それらの組み合わせ毎に設定方法が違う
+		- 面倒くさい！
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="Showcase">
+		### そこで
+		### CIとPaaSをひとまとめにして
+		### なおかつシンプルに
+	</section>
+	<section data-markdown data-title="Showcase">
+		### CIとPaaSの複雑さを
+		### 取り払って統合した全く新しい
+		### アプリケーション
+		### プラットフォーム
+	</section>
+	<section data-title="Showcase">
+		<h1 class="brand"><i class="pe-7s-box2"></i> SHOWCASE</h1>
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="ここが新しい！">
+		Showcaseの**強み**を紹介します
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## ありえん手軽
+		
+		- Gitリポジトリに設定ファイルを含めるだけ！
+		- 数秒でWebサイトやビルド成果物が公開される
+			- traPではGiteaというOSSを改造してフック
+			- GithubのWebhookとかに対応（するつもり）
+		
+		CI+PaaSの連携に要す作業のほとんどが不要
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## 設定がカンタンすぎ
+		![](img/conf1.png)
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## 設定がカンタンすぎ
+		![](img/conf2.png)
+		
+		0バイトじゃん！！！！
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## 設定がカンタンすぎ
+		
+		- 静的ファイルを公開するだけなら設定ファイルは0バイト
+		- 使い易いようにデフォルト値が設定されている
+		- フレームワークを使う場合でも起動コマンドを指定するだけ
+		
+		従来のCIやPaaSと比較して覚えることが非常に少ない
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## ありえん高機能
+		
+		- テストの実行
+		- データベースの利用
+		- 独自ドメインの設定
+		- Wordpressとか有名OSSだって動く
+		
+		世の中のPaaSに劣らないくらい充実
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## ありえん高速
+		
+		- サーバの立ち上げが超高速
+			- バックエンドはDocker
+		- ビルド待ちの時間が一般的なCI+PaaS構成と比べて非常に短い
+			- CI+PaaSを統合したからこそ
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## ありえん柔軟
+		
+		- Webサイトの公開からバイナリのビルドまで同じ設定形式で動かせる
+			- なのに設定ファイルがシンプル
+		- SSHでアプリサーバにログインして何でもできる
+			- IaaS並に柔軟
+		- プレーンなサーバーも自由に立てられる
+			- しかも数秒で！
+			- プロトタイピングも捗る
+	</section>
+	<section data-markdown data-title="ここが新しい！">
+		## 誰でも使える
+		
+		- そのうちオープンソースに
+			- 誰でもオンプレミスで運用できる
+			- 中身が見えるのでトラブル時も安心
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="技術的な話">
+		**Docker**をバックエンドとして利用しています。
+		
+		（デプロイが非常に高速なワケ）
+		
+		![](img/docker.jpg)
+	</section>
+	<section data-markdown data-title="技術的な話">
+		**Docker Swarm**を用いればShowcaseシステム自体のスケールアウトも容易。
+		
+		![](img/swarm.jpg)
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="稼働実績あります">
+		本日紹介した内容の**8割**はもうできています。
+	</section>
+	<section data-markdown data-title="稼働実績あります">
+		traPのオンライン系のゲームは全てShowcaseプラットフォームで動いています。
+		![](img/tw.png)
+	</section>
+	<section data-markdown data-title="稼働実績あります">
+		### traPで試験稼働中！
+		
+		- みんながバシバシ作品を動かせるようになった
+			- 部内GameJam等で活用頂いてます
+			- 格段に成果発表しやすくなった
+	</section>
+</section>
+
+<section>
+	<section data-markdown data-title="まとめ">
+		- 覚えることが少なくて手軽に作品を公開できる
+			- 非エンジニアでも使えるくらい簡単
+		- でもやろうと思えば何でもできる柔軟性を持つ
+		
+		→ いままでクリエイターが作品を発信する際に障壁となっていたものを取り払う
+	</section>
+	<section data-markdown data-title="まとめ">
+		### CIとPaaSの複雑さを
+		### 取り払って統合した全く新しい
+		### アプリケーション
+		### プラットフォーム
+	</section>
+	<section data-title="まとめ">
+		<h1 class="brand"><i class="pe-7s-box2"></i> SHOWCASE</h1>
+		<h3 class="brand">Integrated Application Platform</h3>
+	</section>
+	<section data-title="まとめ">
+		<h2 class="brand"><i class="pe-7s-box2"></i> SHOWCASE</h2>
+		<h4 class="brand">Integrated Application Platform</h4>
+		<br>
+		<h2>Githubで公開してます <a href="https://github.com/kaz/showcase">github.com/kaz/showcase</a></h2>
+	</section>
+</section>
+
+			</div>
+		</div>
+		
+		<div id="footer">
+			<h1></h1>
+			<img src="clear.png">
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+				]
+			});
+			Reveal.addEventListener("slidechanged", function(event){
+				var $base = $("#footer h1").css("opacity", 1);
+				var $new = $base.eq(0).clone().hide().text($(Reveal.getCurrentSlide()).data("title"));
+				$base.parent().append($new);
+				$new.fadeIn();
+				$base.fadeOut(function(){
+					$base.remove();
+				});
+				if(!$("#footer").height()){
+					$("#footer").animate({height: "10vh"});
+				}
+			});
+		</script>
+	</body>
+</html>
