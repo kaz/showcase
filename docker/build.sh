@@ -1,15 +1,15 @@
 #!/bin/bash
 
+# Prepare for building system
+docker run --rm --volume `pwd`/system/nginx:/root --workdir /root alpine:edge sh build_verifier.sh
+
 # Build system
 docker build -t system/mariadb system/mariadb
 docker build -t system/mongodb system/mongodb
 docker build -t system/nginx system/nginx
 
-# Prepare for building runtime
-docker run --rm --volume `pwd`/runtime/base:/root --workdir /root kazsw/arch sh build.sh
-docker build -t runtime runtime/base
-
 # Build runtime
+docker build -t runtime runtime
 docker build -t runtime/go runtime/go
 docker build -t runtime/node runtime/node
 docker build -t runtime/php runtime/php

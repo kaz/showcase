@@ -1,3 +1,0 @@
-[submodule "docker/runtime/base/token-verifier"]
-	path = docker/runtime/base/token-verifier
-	url = https://git.trapti.tech/SysAd/token-verifier.git

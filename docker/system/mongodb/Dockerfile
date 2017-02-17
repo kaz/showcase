@@ -1,7 +1,8 @@
-FROM kazsw/arch
+FROM alpine:edge
 
-RUN yes | pacman -Syu mongodb && \
-    yes | pacman -Scc
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+    apk add --update --no-cache mongodb && \
+    mkdir -p /var/lib/mongodb
 
 EXPOSE 27017
 

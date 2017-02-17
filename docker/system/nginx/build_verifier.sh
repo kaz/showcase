@@ -2,7 +2,6 @@
 
 export GOPATH=/tmp/go
 
-yes | pacman -S go git
-cd token-verifier
+apk add --update go git musl-dev
 go get github.com/dgrijalva/jwt-go
-go build
+go build -o verifier

@@ -1,7 +1,7 @@
-FROM kazsw/arch
+FROM alpine:edge
 
-RUN yes | pacman -Syu mariadb && \
-    yes | pacman -Scc
+RUN apk add --update --no-cache mariadb mariadb-client && \
+    mkdir -p /run/mysqld
 
 EXPOSE 3306
 
