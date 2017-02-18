@@ -55,19 +55,16 @@
 
 <section>
 	<section data-markdown data-title="本日のテーマ">
-		## 本日提案するモノ
+		## 本日のテーマ
 	</section>
 	<section data-markdown data-title="本日のテーマ">
-		### CIとPaaSの複雑さを
-		### 取り払って統合した全く新しい
-		### アプリケーション
-		### プラットフォーム
+		クリエイターが作ったWebアプリ（サービス）を公開する**場所**のお話です
 	</section>
 </section>
 
 <section>
 	<section data-markdown data-title="クラウドってどうなの">
-		作ったサービス・アプリを公開するには？
+		作ったアプリやサービスを公開するには？
 	</section>
 	<section data-markdown data-title="クラウドってどうなの">
 		### 昔は……
@@ -80,7 +77,7 @@
 	<section data-markdown data-title="クラウドってどうなの">
 		### 今は……
 		
-		- "クラウド"が一世を風靡
+		- **クラウド**が一世を風靡
 		
 		サーバーに関する知識が不要になったか？
 	</section>
@@ -182,28 +179,31 @@
 </section>
 
 <section>
-	<section data-markdown data-title="連携するのも大変">
-		自動でアプリをビルドして公開するなら、
-		PaaSとCIを連携しなくてはならない。
+	<section data-markdown data-title="とにかく大変……">
+		アプリのソースコードを持ってきて、ビルドして、配置する**だけ**。
 	</section>
-	<section data-markdown data-title="連携するのも大変">
-		- PaaSやCIは他にもいろいろなものがある
-		- それらの組み合わせ毎に設定方法が違う
-		- 面倒くさい！
+	<section data-markdown data-title="とにかく大変……">
+		## でもこんなに面倒くさい！
+	</section>
+	<section data-markdown data-title="とにかく大変……">
+		- CIやPaaSは機能追加が繰り返されてとっても複雑化してしまった
+		- ソースコードから実際のサービスまで全て面倒を見てくれるプロダクトがない
 	</section>
 </section>
 
 <section>
 	<section data-markdown data-title="Showcase">
+		全てのクリエイターが簡単に作品を公開できる
+		### 仕組みを
+	</section>
+	<section data-markdown data-title="Showcase">
 		### そこで
-		### CIとPaaSをひとまとめにして
+		### CIとPaaSを統合して
 		### なおかつシンプルに
 	</section>
 	<section data-markdown data-title="Showcase">
-		### CIとPaaSの複雑さを
-		### 取り払って統合した全く新しい
-		### アプリケーション
-		### プラットフォーム
+		### ソースコードから製品への流れを
+		### リデザイン
 	</section>
 	<section data-title="Showcase">
 		<h1 class="brand"><i class="pe-7s-box2"></i> SHOWCASE</h1>
@@ -283,6 +283,9 @@
 
 <section>
 	<section data-markdown data-title="技術的な話">
+		少しだけ中の仕組みのお話をします
+	</section>
+	<section data-markdown data-title="技術的な話">
 		**Docker**をバックエンドとして利用しています。
 		
 		（デプロイが非常に高速なワケ）
@@ -297,15 +300,15 @@
 </section>
 
 <section>
-	<section data-markdown data-title="稼働実績あります">
-		本日紹介した内容の**8割**はもうできています。
+	<section data-markdown data-title="運用実績">
+		実際に運用しています
 	</section>
-	<section data-markdown data-title="稼働実績あります">
+	<section data-markdown data-title="運用実績">
 		traPのオンライン系のゲームは全てShowcaseプラットフォームで動いています。
 		![](img/tw.png)
 	</section>
-	<section data-markdown data-title="稼働実績あります">
-		### traPで試験稼働中！
+	<section data-markdown data-title="運用実績">
+		### traPで運用中
 		
 		- みんながバシバシ作品を動かせるようになった
 			- 部内GameJam等で活用頂いてます
@@ -315,11 +318,15 @@
 
 <section>
 	<section data-markdown data-title="まとめ">
-		- 覚えることが少なくて手軽に作品を公開できる
+		まとめ
+	</section>
+	<section data-markdown data-title="まとめ">
+		- 覚えることが少なくて**誰でも素早く手軽に**作品を公開できる
 			- 非エンジニアでも使えるくらい簡単
 		- でもやろうと思えば何でもできる柔軟性を持つ
-		
-		→ いままでクリエイターが作品を発信する際に障壁となっていたものを取り払う
+	</section>
+	<section data-markdown data-title="まとめ">
+		いままでクリエイターが作品を発信する際に障壁となっていたものを取り払う
 	</section>
 	<section data-markdown data-title="まとめ">
 		### CIとPaaSの複雑さを
