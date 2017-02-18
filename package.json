@@ -12,6 +12,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "ejs": "^2.5.5",
+    "is-running": "^2.1.0",
     "js-yaml": "^3.7.0",
     "jsonwebtoken": "^7.2.1",
     "koa": "^2.0.0",
