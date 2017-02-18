@@ -4,10 +4,8 @@ local handle = io.popen("/etc/nginx/verifier " .. token)
 local user = handle:read("*all")
 handle:close()
 
-ngx.log(ngx.ERR, user)
-
 if user ~= "" then
 	ngx.var.user = user
-elseif ngx.var.reject ~= nil then
+elseif ngx.var.policy == "reject" then
 	ngx.exit(ngx.HTTP_UNAUTHORIZED)
 end
