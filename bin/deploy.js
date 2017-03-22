@@ -16,8 +16,13 @@ const deploy = (repo, ref) => new Promise(resolve => {
 });
 
 (async _ => {
+	const type = process.argv[2];
+	if(!type){
+		console.error("type not specified");
+		return;
+	}
 	for(const app of await AppModel.apps()){
-		if(app.config.type == "runtime"){
+		if(new RegExp(type).test(app.config.type)){
 			await deploy(app.repo, app.branch);
 		}
 	}
