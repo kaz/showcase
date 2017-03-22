@@ -1,4 +1,4 @@
 FROM base
 
-RUN pacman -S --noconfirm rust cargo gcc && \
+RUN pacman -S --noconfirm rust cargo && \
     pacman -Scc --noconfirm

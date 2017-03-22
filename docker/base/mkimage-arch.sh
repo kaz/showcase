@@ -70,7 +70,7 @@ case "$arch" in
 	*)
 		PACMAN_CONF='./mkimage-arch-pacman.conf'
 		PACMAN_MIRRORLIST='Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch'
-		PACMAN_EXTRA_PKGS='git'
+		PACMAN_EXTRA_PKGS='git base-devel'
 		EXPECT_TIMEOUT=60
 		ARCH_KEYRING=archlinux
 		DOCKER_IMAGE_NAME="base"

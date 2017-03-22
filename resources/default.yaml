@@ -1,11 +1,7 @@
+# <<< common setting >>>
+
 # deploy mode <"static", "runtime"> (required)
 type: "static"
-
-# additional server name <array or string> (default: [])
-cname: []
-
-# parse user token, restrict access from non-traP user <"no", "soft", "hard"> (default: "no")
-internal: "no"
 
 # script executed on startup (default: null)
 startup: null
@@ -17,20 +13,35 @@ use_mariadb: false
 # relative path to document root (default: .)
 work_dir: "."
 
-# [runtime] docker image to use (default: "base")
+# <<< runtime only setting >>>
+
+# docker image to use (default: "base")
 image: "base"
 
-# [runtime] docker entrypoint command (default: "")
+# docker entrypoint command (default: "")
 entrypoint: ""
 
-# [runtime] which port to proxy via http(80) (default: null)
+# which port to proxy via http(80) (default: null)
 http_proxy: null
 
-# [runtime] which port to expose (default: null)
+# which port to expose (default: null)
 expose: null
 
-# [runtime] enviromnent variables passed to docker container (default: {})
+# enviromnent variables passed to docker container (default: {})
 envs: {}
+
+# <<< static or http-proxied-runtime only setting >>>
+
+# additional server name <array or string> (default: [])
+cname: []
+
+# parse user token, restrict access from non-traP user <"no", "soft", "hard"> (default: "off")
+internal: "off"
+
+# use secure access <"off", "on"> (default: "off")
+https: "off"
+
+# <<< branch deploy setting >>>
 
 # custom deploy setting <see document!> (default: {master: null})
 branch:

@@ -1,6 +1,4 @@
 *.log
 node_modules
 data
-docker/system/nginx/.bashrc
-docker/system/nginx/verifier
-docker/system/nginx/*.pkg.tar.xz
+docker/system/caddy/caddy

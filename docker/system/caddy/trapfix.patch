@@ -1,0 +1,17 @@
+diff --git a/caddy.go b/caddy.go
+index c5ff88c..caa8f40 100644
+--- a/caddy.go
++++ b/caddy.go
+@@ -190,12 +190,6 @@ func (i *Instance) Restart(newCaddyfile Input) (*Instance, error) {
+ 	}
+ 
+ 	// success! stop the old instance
+-	for _, shutdownFunc := range i.onShutdown {
+-		err := shutdownFunc()
+-		if err != nil {
+-			return i, err
+-		}
+-	}
+ 	i.Stop()
+ 
+ 	log.Println("[INFO] Reloading complete")

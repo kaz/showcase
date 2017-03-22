@@ -1,6 +1,7 @@
 {
 	"name": "showcase",
 	"domain": "trap.show",
+	"altDomains": ["trap.games"],
 	"listen": 8080,
 	"git": "https://git.trapti.tech/",
 	"api": {

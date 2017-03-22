@@ -1,26 +1,26 @@
 {
   "name": "showcase",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "author": {
     "name": "Kazuki Sawada",
     "email": "kazuki@6715.jp",
     "url": "http://narusejun.com"
   },
   "scripts": {
-    "start": "node --harmony lib/web.js"
+    "start": "node lib/web.js"
   },
   "dependencies": {
-    "bluebird": "^3.4.7",
-    "ejs": "^2.5.5",
+    "bluebird": "^3.5.0",
+    "ejs": "^2.5.6",
     "is-running": "^2.1.0",
-    "js-yaml": "^3.7.0",
-    "jsonwebtoken": "^7.2.1",
-    "koa": "^2.0.0",
+    "js-yaml": "^3.8.2",
+    "jsonwebtoken": "^7.3.0",
+    "koa": "^2.2.0",
     "koa-route": "^3.2.0",
-    "mongodb": "^2.2.19",
-    "mysql": "^2.12.0",
+    "mongodb": "^2.2.25",
+    "mysql": "^2.13.0",
     "randomstring": "^1.1.5",
-    "rimraf": "^2.5.4",
+    "rimraf": "^2.6.1",
     "shell-escape": "^0.2.0"
   }
 }

@@ -1,0 +1,24 @@
+diff --git a/caddy/caddymain/run.go b/caddy/caddymain/run.go
+index fd193d5..ee5e4e4 100644
+--- a/caddy/caddymain/run.go
++++ b/caddy/caddymain/run.go
+@@ -21,6 +21,7 @@ import (
+ 
+ 	"github.com/mholt/caddy/caddytls"
+ 	// This is where other plugins get plugged in (imported)
++	_ "trapauth"
+ )
+ 
+ func init() {
+diff --git a/caddyhttp/httpserver/plugin.go b/caddyhttp/httpserver/plugin.go
+index 65d0a55..5e8c49c 100644
+--- a/caddyhttp/httpserver/plugin.go
++++ b/caddyhttp/httpserver/plugin.go
+@@ -449,6 +449,7 @@ var directives = []string{
+ 	"proxyprotocol", // github.com/mastercactapus/caddy-proxyprotocol
+ 
+ 	// directives that add middleware to the stack
++	"trapauth",
+ 	"locale", // github.com/simia-tech/caddy-locale
+ 	"log",
+ 	"rewrite",
