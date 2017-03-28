@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clean / Setup
-docker rm -f caddy mariadb mongodb
+docker rm -f mariadb mongodb nginx
 docker network rm trap.show
 docker network create trap.show
 
@@ -20,17 +20,6 @@ system/mongodb
 # Run systems
 
 docker run -dit \
---name caddy \
---hostname caddy \
---volume `pwd`/../data/caddy:/root \
---volume `pwd`/../data/repositories:/srv \
---publish 80:80 \
---publish 443:443 \
---network trap.show \
---restart always \
-system/caddy
-
-docker run -dit \
 --name mariadb \
 --hostname mariadb \
 --volume `pwd`/../data/mariadb:/var/lib/mysql \
@@ -47,3 +36,15 @@ docker run -dit \
 --network trap.show \
 --restart always \
 system/mongodb
+
+docker run -dit \
+--name nginx \
+--hostname nginx \
+--volume `pwd`/../data/repositories:/srv \
+--volume `pwd`/../data/nginx/ssl:/etc/nginx/ssl \
+--volume `pwd`/../data/nginx/conf.d:/etc/nginx/conf.d \
+--publish 80:80 \
+--publish 443:443 \
+--network trap.show \
+--restart always \
+system/nginx

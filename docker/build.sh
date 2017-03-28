@@ -8,9 +8,9 @@ docker build -t runtime/php runtime/php
 docker build -t runtime/rust runtime/rust
 
 # Prepare for building system
-docker run --rm --volume `pwd`/system/caddy:/work runtime/go bash /work/build.sh
+docker run --rm --volume `pwd`/system/nginx:/work runtime/go bash /work/build.sh
 
 # Build system
-docker build -t system/caddy system/caddy
 docker build -t system/mariadb system/mariadb
 docker build -t system/mongodb system/mongodb
+docker build -t system/nginx system/nginx
