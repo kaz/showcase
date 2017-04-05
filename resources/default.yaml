@@ -35,10 +35,10 @@ envs: {}
 # additional server name <array or string> (default: [])
 cname: []
 
-# parse user token, restrict access from non-traP user <"no", "soft", "hard"> (default: "off")
+# parse user token, restrict access from non-traP user <"off", "soft", "hard"> (default: "off")
 internal: "off"
 
-# use secure access <"off", "on"> (default: "off")
+# use secure access <"off", "soft", "hard"> (default: "off")
 https: "off"
 
 # <<< branch deploy setting >>>
