@@ -24,7 +24,7 @@ entrypoint: ""
 # which port to proxy via http(80) (default: null)
 http_proxy: null
 
-# which port to expose (default: null)
+# which port to expose <array or int> (default: null)
 expose: null
 
 # enviromnent variables passed to docker container (default: {})
