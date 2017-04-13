@@ -2,8 +2,9 @@
 	"name": "showcase",
 	"domain": "trap.show",
 	"altDomains": ["trap.games"],
+	"host": "showcase.trapti.tech",
 	"listen": 8080,
-	"git": "https://git.trapti.tech/",
+	"git": "git@git.trapti.tech:",
 	"api": {
 		"protocol": "https:",
 		"hostname": "git.trapti.tech",
