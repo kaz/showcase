@@ -18,8 +18,8 @@ work_dir: "."
 # docker image to use (default: "base")
 image: "base"
 
-# docker entrypoint command (default: "")
-entrypoint: ""
+# docker entrypoint command (default: "cat")
+entrypoint: "cat"
 
 # which port to proxy via http(80) (default: null)
 http_proxy: null
