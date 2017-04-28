@@ -1,4 +1,5 @@
 *.log
+*.lock
 node_modules
 data
 docker/system/nginx/build

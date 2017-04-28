@@ -1,6 +1,6 @@
 {
   "name": "showcase",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Kazuki Sawada",
     "email": "kazuki@6715.jp",
@@ -13,14 +13,19 @@
     "bluebird": "^3.5.0",
     "ejs": "^2.5.6",
     "is-running": "^2.1.0",
-    "js-yaml": "^3.8.2",
-    "jsonwebtoken": "^7.3.0",
+    "js-yaml": "^3.8.3",
+    "jsonwebtoken": "^7.4.0",
     "koa": "^2.2.0",
     "koa-route": "^3.2.0",
-    "mongodb": "^2.2.25",
+    "koa-static-cache": "^5.0.1",
+    "mongodb": "^2.2.26",
     "mysql": "^2.13.0",
     "randomstring": "^1.1.5",
     "rimraf": "^2.6.1",
     "shell-escape": "^0.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-closure-compiler-service": "^0.6.0"
   }
 }

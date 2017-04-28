@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="none">
+	<meta name="theme-color" content="#005BAC">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title><%= title %> | traP Showcase</title>
+	<link href="/css/vendor/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/vendor/animate.min.css" rel="stylesheet">
+	<link href="/css/vendor/light-bootstrap-dashboard.css" rel="stylesheet">
+	<link href="/css/vendor/pe-icon-7-stroke.css" rel="stylesheet">
+	<link href="/css/style.css?v=<%= version %>" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Prompt:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="sidebar" data-color="blue" data-image="https://q.trapti.tech/thumbnail/8430">
+			<div class="sidebar-wrapper">
+				<div class="logo">
+					<a href="/" class="simple-text">
+						traP <strong>Showcase</strong>
+					</a>
+				</div>
+				<ul class="nav">
+					<li<% if(title == "Status"){ %> class="active"<% } %>>
+						<a href="/">
+							<i class="pe-7s-box2"></i>
+							<p>Status</p>
+						</a>
+					</li>
+					<li<% if(title == "My Showcase"){ %> class="active"<% } %>>
+						<a href="/mycase">
+							<i class="pe-7s-photo-gallery"></i>
+							<p>My Showcase</p>
+						</a>
+					</li>
+					<li<% if(title == "All Showcase"){ %> class="active"<% } %>>
+						<a href="/allcase">
+							<i class="pe-7s-albums"></i>
+							<p>All Showcase</p>
+						</a>
+					</li>
+					<li<% if(title == "SSH Keys"){ %> class="active"<% } %>>
+						<a href="/ssh">
+							<i class="pe-7s-key"></i>
+							<p>SSH Keys</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="main-panel">
+			<nav class="navbar navbar-default navbar-fixed">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><%= title %></a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<%= userName %>
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="https://wiki.trapti.tech/user/<%= userName %>">Wiki Profile</a></li>
+									<li><a href="https://wiki.trapti.tech/user/<%= userName %>#edit-form">Edit Wiki Profile</a></li>
+									<li class="divider"></li>
+									<li><a href="https://git.trapti.tech/<%= userName %>">Git Profile</a></li>
+									<li><a href="https://git.trapti.tech/user/settings">Edit Git Profile</a></li>
+									<li class="divider"></li>
+									<li><a href="https://trapti.tech/author/<%= userName %>">Blog Profile</a></li>
+									<li><a href="https://trapti.tech/wp-admin/profile.php">Edit Blog Profile</a></li>
+								</ul>
+							</li>
+							<li><img class="user-icon" src="https://q.trapti.tech/icon/<%= userName %>"></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="content">
