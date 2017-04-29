@@ -1,6 +1,6 @@
 # <<< common setting >>>
 
-# deploy mode <"static", "runtime", "fcgi.php"> (required)
+# deploy mode <"static", "runtime", "fcgi-*"> (required)
 type: "static"
 
 # script executed on startup (default: null)
@@ -21,8 +21,8 @@ entrypoint: "cat"
 # which port to proxy via http(80) (default: null)
 http_proxy: null
 
-# which port to expose <array or int> (default: null)
-expose: null
+# which port to expose <array or int> (default: [])
+expose: []
 
 # enviromnent variables passed to docker container (default: {})
 envs: {}

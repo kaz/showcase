@@ -16,13 +16,12 @@
 								<th>Branch</th>
 								<th>Type</th>
 								<th>Status</th>
-								<th>Image</th>
 								<th>Exposed</th>
 								<th>Open</th>
 								<th>Detail</th>
 							</tr>
 						</thead>
-						<tbody id="showcases"><tr><th class="process" colspan="8"><i class="fa fa-spinner fa-spin"></i> Loading</th></tr></tbody>
+						<tbody id="showcases"><tr><th class="process" colspan="7"><i class="fa fa-spinner fa-spin"></i> Loading</th></tr></tbody>
 					</table>
 				</div>
 			</div>
@@ -87,9 +86,7 @@
 						</div>
 						<div id="container" class="tab-pane">
 							<label>SSH</label>
-							<p><code>ssh -p 22 showcase@showcase.trapti.tech</code> (<a href="/portal/ssh">publickey</a>)</p>
-							<label>Image</label>
-							<p class="detailImage"></p>
+							<p><code>ssh -p 22 showcase@<span class="detailServerHost"></span></code> (<a href="/ssh">publickey</a>)</p>
 							<label>Work dir</label>
 							<p class="detailWorkDir"></p>
 							<label>Entrypoint</label>
@@ -162,5 +159,8 @@
 		</div>
 	</div>
 </div>
+
+<script src="/js/min/common.js?v=<%= version %>"></script>
+<script src="/js/min/mycase.js?v=<%= version %>"></script>
 
 <% include _footer.html %>

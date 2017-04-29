@@ -15,12 +15,4 @@ $(_ => {
 
 const showAlert = (type, message) => $.notify({message}, {type});
 
-const API = (api, param) => $.ajax({
-	url: `/api/${api}`,
-	data: param,
-	xhrFields: {
-		withCredentials: true
-	}
-});
-
 })(jQuery);
