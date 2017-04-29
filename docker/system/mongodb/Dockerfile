@@ -1,7 +1,8 @@
 FROM base
 
-RUN pacman -S --noconfirm mongodb && \
-    pacman -Scc --noconfirm
+RUN pacman -Sy --noconfirm mongodb && \
+    pacman -Scc --noconfirm && \
+    rm -r /usr/share/man/*
 
 EXPOSE 27017
 

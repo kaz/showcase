@@ -1,6 +1,6 @@
 # <<< common setting >>>
 
-# deploy mode <"static", "runtime"> (required)
+# deploy mode <"static", "runtime", "fcgi.php"> (required)
 type: "static"
 
 # script executed on startup (default: null)
@@ -14,9 +14,6 @@ use_mariadb: false
 work_dir: "."
 
 # <<< runtime only setting >>>
-
-# docker image to use (default: "base")
-image: "base"
 
 # docker entrypoint command (default: "cat")
 entrypoint: "cat"

@@ -1,7 +1,8 @@
 FROM base
 
-RUN pacman -S --noconfirm mariadb && \
-    pacman -Scc --noconfirm
+RUN pacman -Sy --noconfirm mariadb && \
+    pacman -Scc --noconfirm && \
+    rm -r /usr/share/man/*
 
 EXPOSE 3306
 
