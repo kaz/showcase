@@ -19,22 +19,4 @@ $(_ => {
 	});
 });
 
-const makeExposePrintable = expose => expose ? (Array.isArray(expose) ? expose : [expose]).map(e => `${e}/tcp`).join(", ") : "-";
-
-const hostname = app => {
-	const name = app.repo.split("/").reverse().join(".") + ".trap.show";
-	if(app.branch != "master"){
-		return `${app.branch}.${name}`;
-	}
-	return name;
-};
-
-const API = (api, param) => $.ajax({
-	url: `/api/${api}`,
-	data: param,
-	xhrFields: {
-		withCredentials: true
-	}
-});
-
 })(jQuery);
