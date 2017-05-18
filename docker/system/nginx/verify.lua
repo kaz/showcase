@@ -5,7 +5,7 @@ local user = token_store:get(token)
 
 if user == nil then
 	local handle = io.popen("/etc/nginx/verify '" .. string.gsub(token, "'", "") .. "'")
-	local user = handle:read("*all")
+	user = handle:read("*all")
 	handle:close()
 	token_store:set(token, user)
 end
