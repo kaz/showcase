@@ -17,28 +17,38 @@ OQIDAQAB
 -----END PUBLIC KEY-----`)
 
 func main() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Print("-")
+			os.Exit(-1)
+		}
+	}()
+
 	if len(os.Args) < 2 {
-		os.Exit(-1)
+		panic("not enough arguments")
 	}
 
 	tokenString := os.Args[1]
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
-			os.Exit(-1)
+			panic("invalid sigining method")
 		}
 
 		pubKey, err := jwt.ParseRSAPublicKeyFromPEM(PUBLIC_KEY)
 		return pubKey, err
 	})
 
-	if err != nil || !token.Valid {
-		os.Exit(-1)
+	if err != nil {
+		panic(err)
+	}
+	if !token.Valid {
+		panic("invalid token")
 	}
 
 	data := token.Claims.(jwt.MapClaims)
 
 	if _, ok := data["name"]; !ok {
-		os.Exit(-1)
+		panic("name not found")
 	}
 
 	fmt.Print(data["name"])
