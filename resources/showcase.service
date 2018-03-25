@@ -1,6 +1,7 @@
 [Unit]
-Description=traP Showcase
-After=syslog.target network.target docker.target
+Description=Showcase
+Requires=docker.service
+After=syslog.target network.target docker.service
 
 [Service]
 Type=simple
