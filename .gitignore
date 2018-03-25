@@ -1,6 +1,3 @@
 data
 node_modules
 client/js/min
-docker/system/nginx/build
-*.log
-*.lock
