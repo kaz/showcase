@@ -66,3 +66,12 @@ body > .navbar-collapse .user-icon {
 th.process {
 	text-align: center;
 }
+
+#menu .card {
+	text-align: center;
+	margin-left: 1em;
+	padding: 1em 1em .3em 1em;
+}
+#menu .card i {
+	font-size: 3em;
+}

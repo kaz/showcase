@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="/css/style.css?v=<%= version %>">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:400,700">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-	<link rel="stylesheet" href="https://cdn.rawgit.com/olimsaidov/pixeden-stroke-7-icon/master/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-	<link rel="stylesheet" href="https://cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 	<script src="/js/vendor/jquery.min.js"></script>
 	<script src="/js/vendor/bootstrap.min.js"></script>
 	<script src="/js/vendor/bootstrap-checkbox-radio-switch.js"></script>
@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="sidebar" data-color="blue" data-image="https://q.trapti.tech/thumbnail/8430">
+		<div class="sidebar" data-color="blue" data-image="https://trap.jp/content/images/2018/03/welcome-1.png">
 			<div class="sidebar-wrapper">
 				<div class="logo">
 					<a href="/" class="simple-text">
@@ -32,32 +32,32 @@
 				<ul class="nav">
 					<li<% if(title == "Status"){ %> class="active"<% } %>>
 						<a href="/">
-							<i class="pe-7s-box2"></i>
-							<p>Status</p>
+							<i class="pe-7s-home"></i>
+							<p>Home</p>
 						</a>
 					</li>
 					<li<% if(title == "My Showcase"){ %> class="active"<% } %>>
 						<a href="/mycase">
-							<i class="pe-7s-photo-gallery"></i>
+							<i class="pe-7s-box2"></i>
 							<p>My Showcase</p>
 						</a>
 					</li>
 					<li<% if(title == "All Showcase"){ %> class="active"<% } %>>
 						<a href="/allcase">
-							<i class="pe-7s-albums"></i>
+							<i class="pe-7s-global"></i>
 							<p>All Showcase</p>
 						</a>
 					</li>
 					<li<% if(title == "SSH Keys"){ %> class="active"<% } %>>
 						<a href="/ssh">
-							<i class="pe-7s-key"></i>
+							<i class="pe-7s-lock"></i>
 							<p>SSH Keys</p>
 						</a>
 					</li>
 				</ul>
 			</div>
 		</div>
-		
+
 		<div class="main-panel">
 			<nav class="navbar navbar-default navbar-fixed">
 				<div class="container-fluid">
@@ -78,14 +78,14 @@
 									<b class="caret"></b>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="https://wiki.trapti.tech/user/<%= userName %>">Wiki Profile</a></li>
-									<li><a href="https://wiki.trapti.tech/user/<%= userName %>#edit-form">Edit Wiki Profile</a></li>
+									<li><a target="_blank" href="https://trap.jp/author/<%= userName %>/">Blog Profile</a></li>
+									<li><a target="_blank" href="https://blog.trapti.tech/ghost/#/team/<%= userName %>">Edit Blog Profile</a></li>
 									<li class="divider"></li>
-									<li><a href="https://git.trapti.tech/<%= userName %>">Git Profile</a></li>
-									<li><a href="https://git.trapti.tech/user/settings">Edit Git Profile</a></li>
+									<li><a target="_blank" href="https://git.trapti.tech/<%= userName %>">Git Profile</a></li>
+									<li><a target="_blank" href="https://git.trapti.tech/user/settings">Edit Git Profile</a></li>
 									<li class="divider"></li>
-									<li><a href="https://trapti.tech/author/<%= userName %>">Blog Profile</a></li>
-									<li><a href="https://trapti.tech/wp-admin/profile.php">Edit Blog Profile</a></li>
+									<li><a target="_blank" href="https://wiki.trapti.tech/user/<%= userName %>">Wiki Profile</a></li>
+									<li><a target="_blank" href="https://wiki.trapti.tech/user/<%= userName %>#edit-form">Edit Wiki Profile</a></li>
 								</ul>
 							</li>
 							<li><img class="user-icon" src="https://q.trapti.tech/icon/<%= userName %>"></li>
@@ -93,5 +93,5 @@
 					</div>
 				</div>
 			</nav>
-			
+
 			<div class="content">
