@@ -6,7 +6,7 @@ const pubDomain = ".trap.show";
 const makeExposePrintable = expose => expose ? (Array.isArray(expose) ? expose : [expose]).map(e => `${e}/tcp`).join(", ") : "-";
 
 const hostname = app => {
-	const name = app.repo.split("/").reverse().join(".") + pubDomain;
+	const name = app.repo.toLowerCase().split("/").reverse().join(".") + pubDomain;
 	if(app.branch != "master"){
 		return `${app.branch}.${name}`;
 	}
@@ -14,10 +14,10 @@ const hostname = app => {
 };
 
 const sanitizeObject = data => {
-	for(let key in data){
-		if(typeof data[key] === "string"){
-			data[key] = data[key].replace(/</g, "&lt;").replace(/>/g, "&gt;");
-		}else if(typeof data[key] === "object"){
+	if(typeof data === "string"){
+		return data.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+	}else if(typeof data === "object"){
+		for(let key in data){
 			data[key] = sanitizeObject(data[key]);
 		}
 	}
