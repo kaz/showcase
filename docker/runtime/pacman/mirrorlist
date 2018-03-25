@@ -1,0 +1,6 @@
+Server = https://jpn.mirror.pkgbuild.com/$repo/os/$arch
+Server = https://archlinux.asia-east.mirror.zoidplex.net/$repo/os/$arch
+Server = https://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
+Server = http://archlinux.asia-east.mirror.zoidplex.net/$repo/os/$arch
+Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
+Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch

@@ -1,21 +1,24 @@
 #!/bin/bash
 
-# Clean / Setup
-docker rm -f mariadb mongodb nginx
-docker network rm trap.show
-docker network create trap.show
-
 # Setup data
 
 docker run --rm -it \
+--hostname mariadb-setup \
 --volume `pwd`/../data/mariadb:/var/lib/mysql \
 --entrypoint bash \
 system/mariadb
 
 docker run --rm -it \
+--hostname mongodb-setup \
 --volume `pwd`/../data/mongodb:/var/lib/mongodb \
 --entrypoint bash \
 system/mongodb
+
+# Clean / Setup
+
+docker rm -f mariadb mongodb nginx
+docker network rm trap.show
+docker network create trap.show
 
 # Run systems
 

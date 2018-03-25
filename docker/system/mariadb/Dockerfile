@@ -1,8 +1,10 @@
-FROM base
+FROM runtime
 
 RUN pacman -Sy --noconfirm mariadb && \
-    pacman -Scc --noconfirm && \
-    rm -r /usr/share/man/*
+    rm -rf \
+        /usr/share/man/* \
+        /var/cache/pacman/pkg/* \
+        /var/lib/pacman/sync/*
 
 EXPOSE 3306
 
