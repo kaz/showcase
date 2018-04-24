@@ -1,4 +1,4 @@
-FROM archimg/base-devel
+FROM archimg/base
 
 COPY pacman/pacman.conf /etc
 COPY pacman/mirrorlist /etc/pacman.d
@@ -12,7 +12,8 @@ RUN pacman -Sy --noconfirm --needed \
         python python2 python-pip python2-pip \
         ruby \
         rust cargo \
-        git zip wget nano vim && \
+        git zip wget nano vim \
+        base-devel && \
     rm -rf \
         /usr/share/man/* \
         /var/cache/pacman/pkg/* \
