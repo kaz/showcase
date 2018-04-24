@@ -8,22 +8,22 @@ const Connector = require("../lib/helper/connector");
 
 const deploy = (repo, ref) => new Promise(resolve => {
 	console.log(`Deploying ${repo} (${ref}) ...`);
-	
+
 	const modulePath = path.resolve(path.join(__dirname, "../lib/worker/deploy"));
 	const child = child_process.fork(modulePath, [repo, ref], {cwd: process.cwd()});
-	
+
 	child.on("exit", resolve);
 });
 
 (async _ => {
-	const type = process.argv[2];
-	if(!type){
+	const typeRE = process.argv[2];
+	if(!typeRE){
 		console.error("type not specified");
 		return;
 	}
-	for(const app of await AppModel.apps()){
-		if(new RegExp(type).test(app.config.type)){
-			await deploy(app.repo, app.branch);
+	for(const {document: {repo, branch, config: type}} of await AppModel.all()){
+		if(new RegExp(typeRE).test(type)){
+			await deploy(repo, branch);
 		}
 	}
 	Connector.close();
