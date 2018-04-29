@@ -1,0 +1,67 @@
+# .eslintrc.yml for Showcase
+# based on version 2018/04/30
+# by @kaz
+
+parserOptions:
+  ecmaVersion: 2018
+
+env:
+  es6: true
+  node: true
+  commonjs: true
+
+extends:
+  - eslint:recommended
+
+rules:
+  # Possible Errors
+  no-console:
+    - error
+    - allow:
+        - trace
+
+  # Best Practices
+  curly:
+    - error
+    - all
+
+  # Stylistic Issues
+  brace-style:
+    - error
+    - 1tbs
+  comma-dangle:
+    - error
+    - always-multiline
+  eol-last:
+    - error
+    - always
+  indent:
+    - error
+    - tab
+    - MemberExpression: 0
+  linebreak-style:
+    - error
+    - unix
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  no-trailing-spaces:
+    - error
+  quotes:
+    - error
+    - double
+  semi:
+    - error
+    - always
+  spaced-comment:
+    - error
+    - always
+
+  # ECMAScript 6
+  arrow-parens:
+    - error
+    - as-needed
+  no-var:
+    - error
+  prefer-const:
+    - error
