@@ -1,0 +1,7 @@
+server {
+	include http.conf;
+	include https.conf;
+	server_name <%= ns %>.<%= settings.domain %>;
+
+	include conf.d/ns/*.<%= ns %>.conf;
+}

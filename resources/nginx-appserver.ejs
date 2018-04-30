@@ -1,0 +1,28 @@
+<% for(const server of servers){ %>
+
+<% if(config.https == "hard"){ %>
+server {
+	server_name <%= server.hostname %>;
+
+	include http.conf;
+	include http_redirect_https.conf;
+}
+<% } %>
+
+server {
+	server_name <%= server.hostname %>;
+
+<%= appSetting %>
+
+	<% if(config.https != "hard"){ %>
+	include http.conf;
+	<% } %>
+	<% if(config.https != "off"){ %>
+	include https.conf;
+	<%   if(server.external){ %>
+	include https_auto_certificate.conf;
+	<%   } %>
+	<% } %>
+}
+
+<% } %>

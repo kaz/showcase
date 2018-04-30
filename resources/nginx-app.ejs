@@ -1,0 +1,48 @@
+	<% if(computed.prefix != "/"){ %>
+	location <%= computed.prefix.replace(/\/$/, "") %> {
+	<% } %>
+		<% if(config.internal != "off"){ %>
+		set $policy <%= config.internal == "soft" ? "soft" : "hard" %>;
+		access_by_lua_file /etc/nginx/verify.lua;
+		<% } %>
+
+		<% if(config.type === "fcgi-php"){ %>
+		index index.php index.html;
+		location ~ \.php(?:$|/) {
+			include php.conf;
+
+			root <%= computed.fastcgi_root %>;
+			fastcgi_param SCRIPT_FILENAME <%= computed.fastcgi_root %>$fastcgi_script_name;
+			fastcgi_pass <%= computed.proxy_pass %>;
+
+			<% if(computed.prefix != "/"){ %>
+			rewrite ^<%= computed.prefix %>(.*)$ /$1 break;
+			<% } %>
+		}
+		<% }else if(computed.proxy_pass){ %>
+		location <%= computed.prefix %> {
+			include proxy.conf;
+			proxy_pass http://<%= computed.proxy_pass %>;
+
+			<% if(computed.prefix != "/"){ %>
+			rewrite ^<%= computed.prefix %>(.*)$ /$1 break;
+			<% } %>
+		}
+		<% }else{ %>
+		index index.html;
+		<% } %>
+
+		location = <%= computed.prefix %><%= settings.name %>.yaml {
+			internal;
+		}
+		location ^~ <%= computed.prefix %>.<%= settings.name %> {
+			internal;
+		}
+		location ^~ <%= computed.prefix %>.git {
+			internal;
+		}
+
+		<%= (computed.prefix != "/") ? "alias" : "root" %> <%= computed.document_root %>/;
+	<% if(computed.prefix != "/"){ %>
+	}
+	<% } %>

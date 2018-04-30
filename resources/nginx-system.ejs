@@ -1,0 +1,35 @@
+server {
+	include http.conf;
+	include https.conf;
+	server_name _;
+
+	default_type text/plain;
+	return 404 "[$http_host] does not exist, or is now deploying.";
+}
+
+server {
+	include http.conf;
+	include https.conf;
+	server_name <%= settings.domain %>;
+
+	include conf.d/c/*.conf;
+}
+
+server {
+	include http.conf;
+	include http_redirect_https.conf;
+	server_name <%= settings.host %>;
+}
+server {
+	include https.conf;
+	server_name <%= settings.host %>;
+
+	location / {
+		add_header Access-Control-Allow-Methods GET always;
+		add_header Access-Control-Allow-Credentials true always;
+		add_header Access-Control-Allow-Origin $http_origin always;
+
+		include proxy.conf;
+		proxy_pass http://<%= gateway %>:<%= listen %>;
+	}
+}

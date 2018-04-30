@@ -44,8 +44,8 @@ docker run -dit \
 --name nginx \
 --hostname nginx \
 --volume `pwd`/../data/repositories:/srv \
---volume `pwd`/../data/nginx/ssl:/etc/nginx/ssl \
 --volume `pwd`/../data/nginx/conf.d:/etc/nginx/conf.d \
+--volume `pwd`/../data/nginx/autossl:/etc/nginx/autossl \
 --publish 80:80 \
 --publish 443:443 \
 --network trap.show \

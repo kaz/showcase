@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
 	"os"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 var PUBLIC_KEY = []byte(`-----BEGIN PUBLIC KEY-----

@@ -1,9 +1,13 @@
 {
 	"name": "showcase",
 	"domain": "trap.show",
-	"altDomains": ["trap.games"],
+
 	"host": "showcase.trapti.tech",
 	"listen": 8080,
+
+	"internalDomains": ["trap.show", "trap.games", "trapti.tech"],
+	"denyDomains": ["trap.jp", "trap.show", "trapti.tech", "tokyotech.org"],
+
 	"git": "git@git.trapti.tech:",
 	"api": {
 		"protocol": "https:",
@@ -12,5 +16,6 @@
 			"Authorization": "token "
 		}
 	},
+
 	"keyPath": "/home/showcase/.ssh/authorized_keys"
 }

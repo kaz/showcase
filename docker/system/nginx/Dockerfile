@@ -8,9 +8,8 @@ RUN pacman -Sy --noconfirm openresty openresty_luarocks openssl-1.0 && \
     ln -s /opt/openresty/nginx/conf /etc/nginx && \
     /opt/openresty/luajit/bin/luarocks install lua-resty-auto-ssl && \
     sed -i "2a shopt -s expand_aliases\nalias openssl=openssl-1.0\n" /opt/openresty/luajit/bin/resty-auto-ssl/dehydrated && \
-    openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -keyout /etc/nginx/fallback.key -out /etc/nginx/fallback.crt -subj "/CN=Showcase/C=JP/O=traP TokyoTech/OU=System administrators/" && \
-    go get github.com/dgrijalva/jwt-go && \
     cd $GOPATH/src/verify && \
+    go get -v github.com/dgrijalva/jwt-go && \
     go build -o /etc/nginx/verify && \
     rm -rf \
         $GOPATH \
@@ -21,6 +20,8 @@ RUN pacman -Sy --noconfirm openresty openresty_luarocks openssl-1.0 && \
 
 COPY *.conf /etc/nginx/
 COPY verify.lua /etc/nginx/
+COPY ssl/*.pem /etc/nginx/ssl/
+COPY index.html /opt/openresty/nginx/html
 
 EXPOSE 80
 EXPOSE 443
