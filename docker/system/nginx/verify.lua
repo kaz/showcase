@@ -11,9 +11,6 @@ if user == nil then
 end
 
 ngx.req.clear_header("X-Showcase-User")
+ngx.req.set_header("X-Showcase-User", user)
 
-if user == "-" and ngx.var.policy == "hard" then
-	ngx.exit(ngx.HTTP_UNAUTHORIZED)
-else
-	ngx.req.set_header("X-Showcase-User", user)
-end
+return user

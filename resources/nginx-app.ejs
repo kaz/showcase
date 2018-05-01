@@ -2,8 +2,7 @@
 	location <%= computed.prefix.replace(/\/$/, "") %> {
 	<% } %>
 		<% if(config.internal != "off"){ %>
-		set $policy <%= config.internal == "soft" ? "soft" : "hard" %>;
-		access_by_lua_file /etc/nginx/verify.lua;
+		access_by_lua_file /etc/nginx/verify_policy_<%= config.internal == "soft" ? "soft" : "hard" %>.lua;
 		<% } %>
 
 		<% if(config.type === "fcgi-php"){ %>
