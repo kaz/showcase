@@ -1,14 +1,14 @@
 {
   "name": "showcase",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": {
     "name": "Kazuki Sawada",
     "email": "kazuki@6715.jp",
     "url": "https://github.com/kaz"
   },
   "scripts": {
-    "install": "gulp",
-    "start": "node lib/web.js"
+    "lint": "eslint --fix --ext .js lib",
+    "start": "nodemon --ignore data/ --ignore ui/ lib/web.js"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -27,10 +27,7 @@
     "shell-escape": "^0.2.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-uglify": "^3.0.0"
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.4"
   }
 }
