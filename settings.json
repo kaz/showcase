@@ -4,6 +4,7 @@
 
 	"host": "showcase.trapti.tech",
 	"listen": 8080,
+	"denyExposes": [80, 443, 3306, 8080, 9100, 27017],
 
 	"internalDomains": ["trap.show", "trap.games", "trapti.tech"],
 	"denyDomains": ["trap.jp", "trap.show", "trapti.tech", "tokyotech.org"],
