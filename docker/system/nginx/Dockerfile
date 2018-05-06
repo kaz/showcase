@@ -18,9 +18,9 @@ RUN pacman -Sy --noconfirm openresty openresty_luarocks openssl-1.0 && \
         /var/cache/pacman/pkg/* \
         /var/lib/pacman/sync/*
 
-COPY *.lua /etc/nginx/
 COPY *.conf /etc/nginx/
 COPY ssl/*.pem /etc/nginx/ssl/
+COPY lua/*.lua /etc/nginx/lua/
 COPY index.html /opt/openresty/nginx/html
 
 EXPOSE 80
