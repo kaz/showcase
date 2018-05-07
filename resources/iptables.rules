@@ -2,9 +2,7 @@
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
--A INPUT -i lo -j ACCEPT
--A INPUT -i docker0 -j ACCEPT
--A INPUT -p tcp --dport 3306 -j DROP
--A INPUT -p tcp --dport 8080 -j DROP
--A INPUT -p tcp --dport 27017 -j DROP
+-A INPUT -i eth0 -p tcp --dport 3306 -j DROP
+-A INPUT -i eth0 -p tcp --dport 8080 -j DROP
+-A INPUT -i eth0 -p tcp --dport 27017 -j DROP
 COMMIT
